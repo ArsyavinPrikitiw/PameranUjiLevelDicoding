@@ -400,14 +400,17 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .nav-inner { gap: 0; }
+  .nav-brand { flex: 1; }
   .nav-links {
     display: none; flex-direction: column; align-items: stretch;
     position: absolute; top: var(--nav-h); left: 0; right: 0;
     background: rgba(8,12,20,.97);
     border-bottom: 1px solid var(--border); padding: .75rem;
+    margin-left: 0;
   }
   .nav-links.open { display: flex; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; margin-left: 0; }
   .stats-bar { padding: .9rem 1rem; }
   .stat { padding: 0 1rem; }
   .stat-div { display: none; }
