@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pameran Uji Level Dicoding 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-mark"><img src="assets/logo.png" alt="SMKN 1 Ciomas"></div>
+      <div class="nav-brand-name">
+        <strong>SMKN 1 Ciomas</strong>
+        <small>Jurusan PPLG - Pameran Uji Level (Dicoding) 2026</small>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <button class="nav-link on"  onclick="goto('#hero')">Beranda</button>
+      <button class="nav-link"     onclick="goto('#projects')">Project</button>
+      <button class="nav-link"     onclick="goto('#tentang')">Tentang</button>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Kegiatan Uji Level 2026
+    </div>
+    <h1 class="hero-title">
+      Pameran Hasil Uji Level<br>
+      <span class="grad">SMKN 1 Ciomas</span>
+    </h1>
+    <p class="hero-desc">
+      Wadah digital resmi untuk menampilkan seluruh hasil karya project siswa X Program Keahlian Pengembangan Perangkat Lunak dan Gim (PPLG) SMKN 1 Ciomas dalam rangka kegiatan
+      Uji Level bagian Dicoding. Jelajahi solusi inovatif yang telah kami wujudkan.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">Healthy Lives</span>
+      <span class="pill">Adaptive Learning</span>
+      <span class="pill">Future Work</span>
+      <span class="pill">Communities</span>
+      <span class="pill">Sustainable</span>
+      <span class="pill">Fintech</span>
+    </div>
+    <button class="hero-cta" onclick="goto('#projects')">Lihat Karya</button><br>
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-n" id="sTotal">—</span>
+        <span class="stat-l">Project</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-n" id="sTeam">—</span>
+        <span class="stat-l">Tim</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-n">6</span>
+        <span class="stat-l">Kategori</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-n">2026</span>
+        <span class="stat-l">Tahun</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section class="section" id="projects">
+  <div class="container">
+    <p class="sec-eyebrow">Karya Siswa</p>
+    <h2 class="sec-title">Project Uji Level</h2>
+    <p class="sec-sub">Seluruh hasil karya tim peserta Uji Level Dicoding Indonesia 2026.</p>
+
+    <div class="filter-wrap" id="filterWrap">
+      <button class="ftab on" data-cat="all">Semua</button>
+      <button class="ftab" data-cat="1">Healthy Lives</button>
+      <button class="ftab" data-cat="2">Adaptive Learning</button>
+      <button class="ftab" data-cat="3">Future Work</button>
+      <button class="ftab" data-cat="4">Communities</button>
+      <button class="ftab" data-cat="5">Sustainable</button>
+      <button class="ftab" data-cat="6">Fintech</button>
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Cari project atau ID kelompok…" />
+    </div>
+
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- ══ TENTANG ══ -->
+<section class="section" id="tentang">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="sec-eyebrow">Tentang Kegiatan</p>
+        <h2 class="sec-title">Apa itu Uji Level?</h2>
+        <p>
+          Uji Level adalah kegiatan evaluasi praktik mengukur kompetensi peserta melalui pembuatan proyek nyata berbasis web secara tim.
+        </p>
+        <p>
+          Setiap tim merencanakan, mendesain, dan membangun website fungsional dalam waktu
+          yang ditentukan, dengan tema yang relevan terhadap tantangan nyata masyarakat Indonesia.
+        </p>
+        <div class="about-steps">
+          <div class="a-step">
+            <div class="a-num">01</div>
+            <div class="a-text">
+              <h4>Pembentukan Tim</h4>
+              <p>Peserta membentuk tim dan memilih tema dari 6 kategori.</p>
+            </div>
+          </div>
+          <div class="a-step">
+            <div class="a-num">02</div>
+            <div class="a-text">
+              <h4>Perencanaan & Desain</h4>
+              <p>Membuat wireframe, rancangan sistem, dan desain antarmuka.</p>
+            </div>
+          </div>
+          <div class="a-step">
+            <div class="a-num">03</div>
+            <div class="a-text">
+              <h4>Pengembangan Website</h4>
+              <p>Membangun website fungsional dengan teknologi web modern.</p>
+            </div>
+          </div>
+          <div class="a-step">
+            <div class="a-num">04</div>
+            <div class="a-text">
+              <h4>Presentasi & Pameran</h4>
+              <p>Dipresentasikan lalu dipamerkan secara digital.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer-new">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="fg-brand">
+          <div class="fg-brand-logo">
+            <img src="assets/logo.png" alt="SMKN 1 Ciomas"
+                 onerror="this.parentElement.style.background='var(--accent)';this.remove();" />
+          </div>
+          <div class="fg-brand-text">
+            <strong>SMKN 1 Ciomas</strong>
+            <p>Pameran Hasil Uji Level Kelas X Program Keahlian Pengembangan Perangkat Lunak dan Gim (PPLG) Tahun Ajaran 2025/2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="fg-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#hero" onclick="goto('#hero');return false;">Beranda</a></li>
+          <li><a href="#projects" onclick="goto('#projects');return false;">Daftar Project</a></li>
+          <li><a href="#tentang" onclick="goto('#tentang');return false;">Tentang Uji Level</a></li>
+        </ul>
+      </div>
+
+      <!-- Informasi -->
+      <div class="fg-col">
+        <h4>Informasi</h4>
+        <ul>
+          <li><span>Program Keahlian PPLG</span></li>
+          <li><span>Kelas X — Tahun 2026</span></li>
+          <li><span>Ciomas, Kabupaten Bogor</span></li>
+          <li><span>Jawa Barat, Indonesia</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2026 SMKN 1 Ciomas · Jurusan PPLG. Seluruh karya adalah milik siswa masing-masing.</p>
+      <span>Pameran Uji Level 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ══ MODAL ══ -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="projects.js"></script>
+</body>
+</html>

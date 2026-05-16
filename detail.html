@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Project — Pameran Uji Level Dicoding 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══ NAVBAR (sama persis dengan index.html) ══ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-mark"><img src="assets/logo.png" alt="SMKN 1 Ciomas"></div>
+      <div class="nav-brand-name">
+        <strong>SMKN 1 Ciomas</strong>
+        <small>Jurusan PPLG - Pameran Uji Level (Dicoding) 2026</small>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <button class="nav-link" onclick="window.location.href='index.html'">Beranda</button>
+      <button class="nav-link on" onclick="window.location.href='index.html#projects'">Project</button>
+      <button class="nav-link" onclick="window.location.href='index.html#tentang'">Tentang</button>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ DETAIL PAGE ══ -->
+<div class="detail-page">
+  <div class="container">
+
+    <!-- Back button -->
+    <button class="back-btn" onclick="window.history.back()">
+      ← Kembali ke Daftar Project
+    </button>
+
+    <!-- Header -->
+    <div class="detail-header" id="detailHeader">
+      <div class="detail-id" id="detailId"></div>
+      <div class="detail-title" id="detailTitle"></div>
+      <span class="detail-cat-badge" id="detailCatBadge"></span>
+    </div>
+
+    <!-- 2-column layout -->
+    <div class="detail-layout">
+
+      <!-- ── MAIN CONTENT ── -->
+      <div class="detail-main">
+
+        <!-- Screenshot -->
+        <div class="detail-screenshot" id="detailScreenshot">
+          <div class="ss-icon">🖥️</div>
+          <div class="ss-label">Screenshot Website Project</div>
+        </div>
+
+        <!-- Deskripsi -->
+        <div class="detail-section-title">Deskripsi Project</div>
+        <p class="detail-desc" id="detailDesc"></p>
+
+        <!-- Teknologi -->
+        <div class="detail-stack-wrap">
+          <div class="detail-section-title">Teknologi yang Digunakan</div>
+          <div class="detail-stack" id="detailStack"></div>
+        </div>
+
+      </div>
+
+      <!-- ── SIDEBAR ── -->
+      <div class="detail-sidebar">
+
+        <!-- Anggota Tim -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Anggota Tim</div>
+          <div class="member-list" id="memberList">
+            <!-- diisi JS -->
+          </div>
+        </div>
+
+        <!-- Tautan Project -->
+        <div class="sidebar-card" id="linkCard">
+          <div class="sidebar-card-title">Tautan Project</div>
+          <div id="linkList"></div>
+        </div>
+
+        <!-- Informasi -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Informasi</div>
+          <div class="info-row">
+            <div class="info-item"><strong>Kegiatan:</strong> Uji Level </div>
+            <div class="info-item"><strong>Sekolah:</strong> SMKN 1 Ciomas</div>
+            <div class="info-item"><strong>Jurusan:</strong> PPLG</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER BARU (sesuai gambar referensi) ══ -->
+<footer class="footer-new">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="fg-brand">
+          <div class="fg-brand-logo">
+            <img src="assets/logo.png" alt="SMKN 1 Ciomas"
+                 onerror="this.parentElement.style.background='var(--accent)';this.remove();" />
+          </div>
+          <div class="fg-brand-text">
+            <strong>SMKN 1 Ciomas</strong>
+            <p>Pameran Hasil Uji Level Kelas X Program Keahlian Pengembangan Perangkat Lunak dan Gim (PPLG) Tahun Ajaran 2025/2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="fg-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#projects">Daftar Project</a></li>
+          <li><a href="index.html#tentang">Tentang Uji Level</a></li>
+        </ul>
+      </div>
+
+      <!-- Informasi -->
+      <div class="fg-col">
+        <h4>Informasi</h4>
+        <ul>
+          <li><span>Program Keahlian PPLG</span></li>
+          <li><span>Kelas X — Tahun 2026</span></li>
+          <li><span>Ciomas, Kabupaten Bogor</span></li>
+          <li><span>Jawa Barat, Indonesia</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2026 SMKN 1 Ciomas · Jurusan PPLG. Seluruh karya adalah milik siswa masing-masing.</p>
+      <span>Pameran Uji Level 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="projects.js"></script>
+<script>
+/* ══════════════════════════════════════════
+   DETAIL PAGE SCRIPT
+   Ambil project dari URL param ?id=CC26-PS031
+   lalu render ke halaman
+══════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // Ambil ID dari URL
+  const params = new URLSearchParams(window.location.search);
+  const pid    = params.get('id');
+
+  // Cari project di array PROJECTS (dari projects.js)
+  const p = PROJECTS.find(p => p.id === pid);
+
+  if (!p) {
+    document.querySelector('.detail-page').innerHTML = `
+      <div class="container" style="padding:5rem 1.5rem;text-align:center;color:var(--muted);">
+        <div style="font-size:3rem;margin-bottom:1rem;">🔍</div>
+        <p style="font-size:1rem;">Project tidak ditemukan.</p>
+        <button class="back-btn" style="margin-top:1rem;" onclick="window.location.href='index.html'">← Kembali</button>
+      </div>`;
+    return;
+  }
+
+  const cat = CATS[p.cat] || {};
+
+  // Set page title
+  document.title = `${p.judul} — Pameran Uji Level Dicoding 2026`;
+
+  // Header
+  document.getElementById('detailId').textContent = p.id || '';
+  document.getElementById('detailTitle').textContent = p.judul || '';
+
+  const badge = document.getElementById('detailCatBadge');
+  if (cat.label) {
+    badge.textContent = `${cat.icon} ${cat.label}`;
+    badge.style.background = cat.bg;
+    badge.style.color = cat.color;
+  }
+
+  // Screenshot
+  const ss = document.getElementById('detailScreenshot');
+  if (p.gambar) {
+    ss.innerHTML = `<img src="${p.gambar}" alt="${x(p.judul)}"
+      onerror="this.parentElement.innerHTML='<div class=\'ss-icon\'>🖥️</div><div class=\'ss-label\'>Screenshot Website Project</div>'" />`;
+  }
+
+  // Deskripsi
+  document.getElementById('detailDesc').textContent = p.deskripsi || '';
+
+  // Stack — pakai .stack-tag sama persis seperti card
+  const stackEl = document.getElementById('detailStack');
+  (p.stack || []).forEach(s => {
+    const span = document.createElement('span');
+    span.className = 'stack-tag';
+    span.textContent = s;
+    stackEl.appendChild(span);
+  });
+
+  // Anggota tim
+  const memberEl = document.getElementById('memberList');
+  if (p.anggota && p.anggota.length) {
+    p.anggota.forEach(m => {
+      const initials = m.nama.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+      memberEl.innerHTML += `
+        <div class="member-item">
+          <div class="member-avatar" style="background:${avatarColor(m.nama)}">${initials}</div>
+          <div>
+            <div class="member-name">${x(m.nama)}</div>
+            <div class="member-role">${x(m.peran || '')}</div>
+          </div>
+        </div>`;
+    });
+  } else {
+    memberEl.innerHTML = `<div style="font-size:.82rem;color:var(--muted2);">Belum ada data anggota.</div>`;
+  }
+
+  // Links
+  const linkEl = document.getElementById('linkList');
+  if (p.link) {
+    linkEl.innerHTML += `
+      <a class="link-btn" href="${p.link}" target="_blank" rel="noopener">
+        <span class="link-btn-icon">🔗</span> Lihat Demo Website
+      </a>`;
+  }
+  if (p.github) {
+    linkEl.innerHTML += `
+      <a class="link-btn" href="${p.github}" target="_blank" rel="noopener">
+        <span class="link-btn-icon">⬡</span> Lihat di GitHub
+      </a>`;
+  }
+  if (!p.link && !p.github) {
+    document.getElementById('linkCard').style.display = 'none';
+  }
+});
+
+/* Warna avatar berdasarkan nama */
+function avatarColor(name) {
+  const colors = ['#3b82f6','#10b981','#f59e0b','#8b5cf6','#ec4899','#06b6d4','#ef4444','#14b8a6'];
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  return colors[Math.abs(hash) % colors.length];
+}
+
+function x(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+</script>
+</body>
+</html>
