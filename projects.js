@@ -57,14 +57,14 @@ const PROJECTS = [
     cat      : '6',
     deskripsi: 'Website QR Menu Digital Dimsum yang memudahkan pelanggan melihat menu, memilih makanan, dan melakukan pemesanan secara praktis hanya dengan scan QR code. Dirancang dengan tampilan modern dan responsif untuk meningkatkan pengalaman pelanggan dan efisiensi pelayanan.',
     stack    : ['HTML', 'JSX', 'Tailwind CSS', 'Express', 'Node.', 'Vite'],
-    link     : 'https://bosmentai.vercel.app/menu',
+    link     : 'https://bosmentai-user.vercel.app',
     gambar   : '',
     github   : '',
     anggota  : [
       { nama: 'Siti Asiah', peran: '11 PPLG 2 - UI/UX Designer' },
       { nama: 'Malika Thabina Hidayat', peran: '11 PPLG 2 - Data Analyst' },
       { nama: 'Aryandi Ramadhani', peran: '10 PPLG 2 - BackEnd Dev' },
-      { nama: 'Rio satria', peran: '11 PPLG 2 - FrontEnd Dev' },
+      { nama: 'Rio satria', peran: '10 PPLG 2 - FrontEnd Dev' },
       { nama: 'Habib Ramadhan', peran: '10 PPLG 3 - Project Manager' },
     ],
   },
@@ -174,7 +174,7 @@ const PROJECTS = [
     deskripsi: 'FinSmart hadir sebagai solusi aplikasi manajemen keuangan personal berbasis web yang dirancang khusus untuk memenuhi kebutuhan dan preferensi Gen Z. Berbeda dari aplikasi keuangan konvensional yang terasa berat dan membosankan, FinSmart mengemas fitur-fitur finansial penting dalam antarmuka yang modern, intuitif, dan menarik secara visual, menggunakan pendekatan gamifikasi ringan dan bahasa yang relevan bagi pengguna muda.',
     stack    : ['HTML', 'CSS', 'JSX', 'Axios', 'Node', 'Express', 'MySQL', 'JWT', 'Bcryptjs', 'Helmet', 'CORS'],
     link     : 'https://finsmart-pameran.vercel.app',
-    gambar   : '',
+    gambar   : 'assets/WhatsApp Image 2026-05-17 at 10.29.08.jpeg',
     github   : '',
     anggota  : [
       { nama: 'M. Yusuf Al Akil', peran: '10 PPLG 2 - Project Manager (Fullstack)' },
@@ -219,11 +219,49 @@ const PROJECTS = [
       { nama: 'Muhamad Hafidh Khoerullah',    peran: 'Full-Stack Team Leader' },
       { nama: 'Diva Ayu Fatmawati', peran: 'Front-End Analysis' },
       { nama: 'Nabila Indriyanti', peran: 'Front-End Analysis' },
-      { nama: 'Almira Tunggadewi Supriatna', peran: 'Front-End Analysis UI-UX' },
-      { nama: 'Prissa Mutiara Nova Sugiri', peran: 'Front-End Analysis UI-UX' },
+      { nama: 'Almira Tunggadewi Supriatna', peran: 'FrontEnd Analysis UI-UX' },
+      { nama: 'Prissa Mutiara Nova Sugiri', peran: 'FrontEnd Analysis UI-UX' },
     ],
   },
-  
+
+  {
+    id       : 'CC26-PS033',
+    judul    : 'Futura',
+    tema     : 'Healthy Lives & Well-being',
+    cat      : '1',
+    deskripsi: 'Futura adalah aplikasi web berbasis data yang membantu pengguna memahami dampak kebiasaan harian terhadap kondisi kesehatan di masa depan. Menggunakan pendekatan rule-based system, aplikasi ini mengolah data habit menjadi health score, analisis tren 14 hari, serta proyeksi kondisi 90 hari secara terstruktur dan mudah dipahami.',
+    stack    : ['HTML', 'CSS', 'JSX', 'Express', 'Node', 'Vite', 'PostgreSQL'],
+    link     : 'https://futuraproject.netlify.app/',
+    gambar   : 'assets/framely-1775917844846 - Auza Alfarizi Ramadhan.png',
+    github   : '',
+    anggota  : [
+      { nama: 'Chalifa Chairunnisa',    peran: '11 PPLG 3 - UI/UX Designer' },
+      { nama: 'Intan Nuraeni', peran: '10 PPLG 3 - UI/UX Designer' },
+      { nama: 'Mutia Khamelia', peran: '10 PPLG 3 - UI/UX  Designer' },
+      { nama: 'Andini Novriani', peran: '10 PPLG 3 - FrontEnd Dev' },
+      { nama: 'Namira Alifatunnisa', peran: '10 PPLG 1 - FrontEnd Dev' },
+      { nama: 'Auza Alfarizi Ramadhan', peran: '11 PPLG 2 - Backend Dev' },
+    ],
+  },
+
+  {
+    id       : 'CC26-PS036',
+    judul    : 'FlexiStudy', 
+    tema     : 'Accessible & Adaptive Learning',
+    cat      : '2',
+    deskripsi: 'FlexiStudy adalah website pembelajaran yang membantu pelajar memahami materi dengan lebih mudah melalui penjelasan sederhana dan interaktif. Website ini menyediakan materi pelajaran umum seperti Bahasa Indonesia, Bahasa Inggris, dan IPAS dengan bahasa yang lebih mudah dipahami sesuai kebutuhan belajar setiap individu.',
+    stack    : ['HTML', 'CSS', 'JSX', 'Express', 'Node', 'Vite', 'PostgreSQL Neon'],
+    link     : 'https://flexistudy-rho.vercel.app/',
+    gambar   : 'assets/User Guideline CC26-PS033_20260517_152422_0000 - Rezqia Aninda Afiahtusyifa.png',
+    github   : '',
+    anggota  : [
+      { nama: 'Refaldi Ramadhan',    peran: '10 PPLG 2 - Backend' },
+      { nama: 'Muhammad Ataya Lubna Sakhi', peran: '10 PPLG 2 - Project Manager' },
+      { nama: 'Rezqia Aninda Afiahtusyifa', peran: '10 PPLG 1 - Design UI/UX' },
+      { nama: 'Siti Nur Fadilah', peran: '10 PPLG 1 - Analyst & Frontend' },
+      { nama: 'Syakila Ramadani', peran: '10 PPLG 1 - Analyst & Frontend' },
+    ],
+  },
 ];
 
 /* ──────────────────────────────────────────
