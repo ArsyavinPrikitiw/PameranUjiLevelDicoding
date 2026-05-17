@@ -70,7 +70,7 @@ const PROJECTS = [
   },
 
   {
-    id       : 'Tidak Ada ID kelompok',
+    id       : 'CC26-PS030',
     judul    : 'Green Live Initiative',
     tema     : 'Sustainable Living & Responsible Consumption',
     cat      : '5',
@@ -134,7 +134,7 @@ const PROJECTS = [
     cat      : '6',
     deskripsi: 'DashUMKM adalah platform dashboard terpusat untuk mengelola penjualan multi-channel (TikTok Shop, Instagram, Tokopedia/Shopee) dengan otomasi inventory, sistem sinkronisasi template cerdas, dan real-time analytics. Kami fokus menyelesaikan permasalahan di mana 78% UMKM menghabiskan 65+ menit/hari untuk manual order management. Masalah tersebut berujung pada 64% keluhan overselling, 71% kesulitan hitung keuntungan, dan 58% UMKM tidak mengetahui penjualan produk laku. Melalui proyek DashUMKM berbasis TikTok Template Assistant sebagai painkiller operasional dan auto-inventory, kami bertujuan mencegah overselling dan meningkatkan revenue berbasis data analytics, terkhusus bagi 4.5 juta target sasaran UMKM Indonesia. Alasan pemilihan proyek ini didasarkan pada besarnya peranan real problem, technical fesibility tanpa pusing izin API PT/CV, target pasar besar, serta masuk ke dalam track Revolusi Teknologi Keuangan.',
     stack    : ['HTML', 'Tailwind CSS', 'JSX', 'Express', 'MongoDB'],
-    link     : 'https://link-project.vercel.app',
+    link     : 'https://dashumkm.vercel.app',
     gambar   : 'assets/Screenshot 2026-05-07 201127 - Reyhan.png',
     github   : '',
     anggota  : [
