@@ -81,7 +81,7 @@ img { display: block; max-width: 100%; }
 
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: .3rem; margin-left: .5rem;
+  background: none; border: none; cursor: pointer; padding: .3rem; margin-left: auto;
 }
 .hamburger span { width: 20px; height: 2px; background: var(--muted); border-radius: 99px; display: block; }
 
@@ -395,27 +395,151 @@ footer {
 .modal-actions { margin-top: 1.25rem; }
 
 /* ══ RESPONSIVE ══ */
+
+/* ── Medium: Tablet (max 900px) ── */
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; }
+
+  /* Proj grid: 2 kolom di tablet */
+  .proj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stats bar: lebih compact */
+  .stats-bar {
+    padding: 1rem 1.25rem;
+    gap: 0;
+  }
+  .stat { padding: 0 1.25rem; }
+
+  /* Hero desc: lebih lebar */
+  .hero-desc { max-width: 90%; }
+
+  /* Filter wrap: scrollable horizontal */
+  .filter-wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .35rem;
+    scrollbar-width: none;
+  }
+  .filter-wrap::-webkit-scrollbar { display: none; }
+  .ftab { flex-shrink: 0; }
 }
 
+/* ── Small: Mobile (max 640px) ── */
 @media (max-width: 640px) {
-  .nav-inner { gap: 0; }
-  .nav-brand { flex: 1; }
+  /* Nav inner: brand kiri, hamburger kanan */
+  .nav-inner { gap: .75rem; }
+
+  /* Nav links jadi dropdown, reset margin-left */
   .nav-links {
-    display: none; flex-direction: column; align-items: stretch;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0; /* override desktop margin-left: auto */
     position: absolute; top: var(--nav-h); left: 0; right: 0;
     background: rgba(8,12,20,.97);
-    border-bottom: 1px solid var(--border); padding: .75rem;
-    margin-left: 0;
+    border-bottom: 1px solid var(--border);
+    padding: .5rem .75rem .75rem;
+    gap: 0;
   }
   .nav-links.open { display: flex; }
-  .hamburger { display: flex; margin-left: 0; }
-  .stats-bar { padding: .9rem 1rem; }
-  .stat { padding: 0 1rem; }
+
+  /* Hamburger: push ke kanan dengan margin-left auto */
+  .hamburger { display: flex; margin-left: auto; }
+
+  /* Tiap tombol nav: rata kiri, full lebar */
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: .65rem 1rem;
+    font-size: .88rem;
+    border-radius: var(--rs);
+  }
+
+  /* Nav brand: sembunyikan subtitle agar tidak overflow */
+  .nav-brand-name small { display: none; }
+
+  /* Hero */
+  .hero { padding-left: 1rem; padding-right: 1rem; }
+  .hero-title { font-size: clamp(1.85rem, 8vw, 2.4rem); }
+  .hero-desc { font-size: .88rem; max-width: 100%; }
+  .hero-cta { margin-bottom: 2.5rem; }
+
+  /* Stats bar: 2x2 grid di mobile */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+  }
+  .stat { padding: .5rem; text-align: center; }
+  .stat-n { font-size: 1.5rem; }
   .stat-div { display: none; }
+
+  /* Filter wrap: wrapper dengan fade + arrow di kanan */
+  .filter-outer {
+    position: relative;
+    overflow: hidden; /* potong konten yang keluar */
+  }
+  .filter-outer::after {
+    content: '›';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: .35rem; /* sama dengan padding-bottom filter-wrap */
+    width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent2);
+    background: linear-gradient(to right, transparent 0%, var(--bg2) 55%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity .25s ease;
+  }
+  .filter-outer.scrolled-end::after {
+    opacity: 0;
+  }
+
+  /* Filter: scrollable horizontal */
+  .filter-wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .35rem;
+    scrollbar-width: none;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 3.5rem; /* ruang untuk fade arrow */
+  }
+  .filter-wrap::-webkit-scrollbar { display: none; }
+  .ftab { flex-shrink: 0; }
+
+  /* Search: full width */
+  .search-wrap { max-width: 100%; }
+
+  /* Proj grid: 1 kolom */
   .proj-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
   .footer-inner { flex-direction: column; align-items: flex-start; }
+
+  /* Section padding */
+  .section { padding: 3.5rem 0; }
+
+  /* About steps */
+  .about-text p { max-width: 100%; }
+  .a-text p { max-width: 100%; }
+
+  /* Scroll to top */
+  #toTop { bottom: 1rem; right: 1rem; }
 }
 
 /* ══════════════════════════════════════════
@@ -604,6 +728,25 @@ footer {
   .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
   .footer-bottom-bar { flex-direction: column; align-items: flex-start; }
   .detail-layout { padding: 1.5rem 0 3rem; }
+
+  /* Detail header: font size lebih kecil */
+  .detail-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+
+  /* Back button: font lebih readable */
+  .back-btn { font-size: .8rem; }
+
+  /* Sidebar card: padding lebih kecil */
+  .sidebar-card { padding: 1rem; }
+
+  /* Member item: lebih compact */
+  .member-avatar { width: 32px; height: 32px; font-size: .7rem; }
+  .member-name { font-size: .82rem; }
+
+  /* Link btn: full width sudah, tapi tambah padding */
+  .link-btn { padding: .65rem .85rem; font-size: .8rem; }
+
+  /* Detail page padding */
+  .detail-page { padding-bottom: 2rem; }
 }
 
 /* ══ ANIMATION ══ */

@@ -70,7 +70,7 @@ const PROJECTS = [
   },
 
   {
-    id       : 'CC26-PS030',
+    id       : 'Tidak Ada ID kelompok',
     judul    : 'Green Live Initiative',
     tema     : 'Sustainable Living & Responsible Consumption',
     cat      : '5',
@@ -134,7 +134,7 @@ const PROJECTS = [
     cat      : '6',
     deskripsi: 'DashUMKM adalah platform dashboard terpusat untuk mengelola penjualan multi-channel (TikTok Shop, Instagram, Tokopedia/Shopee) dengan otomasi inventory, sistem sinkronisasi template cerdas, dan real-time analytics. Kami fokus menyelesaikan permasalahan di mana 78% UMKM menghabiskan 65+ menit/hari untuk manual order management. Masalah tersebut berujung pada 64% keluhan overselling, 71% kesulitan hitung keuntungan, dan 58% UMKM tidak mengetahui penjualan produk laku. Melalui proyek DashUMKM berbasis TikTok Template Assistant sebagai painkiller operasional dan auto-inventory, kami bertujuan mencegah overselling dan meningkatkan revenue berbasis data analytics, terkhusus bagi 4.5 juta target sasaran UMKM Indonesia. Alasan pemilihan proyek ini didasarkan pada besarnya peranan real problem, technical fesibility tanpa pusing izin API PT/CV, target pasar besar, serta masuk ke dalam track Revolusi Teknologi Keuangan.',
     stack    : ['HTML', 'Tailwind CSS', 'JSX', 'Express', 'MongoDB'],
-    link     : 'https://dashumkm.vercel.app',
+    link     : 'https://link-project.vercel.app',
     gambar   : 'assets/Screenshot 2026-05-07 201127 - Reyhan.png',
     github   : '',
     anggota  : [
@@ -251,8 +251,10 @@ let searchQ   = '';
 document.addEventListener('DOMContentLoaded', () => {
   render();
 
-  document.getElementById('sTotal').textContent = PROJECTS.length;
-  document.getElementById('sTeam').textContent  = PROJECTS.length;
+  const sTotalEl = document.getElementById('sTotal');
+  const sTeamEl  = document.getElementById('sTeam');
+  if (sTotalEl) sTotalEl.textContent = PROJECTS.length;
+  if (sTeamEl)  sTeamEl.textContent  = PROJECTS.length;
 
   // Filter tabs
   document.querySelectorAll('.ftab').forEach(btn => {
@@ -265,25 +267,70 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Search
-  document.getElementById('searchInput').addEventListener('input', e => {
-    searchQ = e.target.value.toLowerCase();
-    render();
-  });
+  const searchInputEl = document.getElementById('searchInput');
+  if (searchInputEl) {
+    searchInputEl.addEventListener('input', e => {
+      searchQ = e.target.value.toLowerCase();
+      render();
+    });
+  }
 
   // Hamburger
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
+  const hamburgerEl = document.getElementById('hamburger');
+  if (hamburgerEl) {
+    hamburgerEl.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  }
+
+  // Swipe indicator: sembunyikan arrow fade saat filter sudah di-scroll sampai ujung
+  const filterWrapEl = document.getElementById('filterWrap');
+  const filterOuterEl = filterWrapEl && filterWrapEl.parentElement;
+  if (filterWrapEl && filterOuterEl) {
+    filterWrapEl.addEventListener('scroll', () => {
+      const atEnd = filterWrapEl.scrollLeft + filterWrapEl.clientWidth >= filterWrapEl.scrollWidth - 4;
+      filterOuterEl.classList.toggle('scrolled-end', atEnd);
+    });
+  }
 
   // Modal close on backdrop click
-  document.getElementById('overlay').addEventListener('click', e => {
-    if (e.target === document.getElementById('overlay')) closeModal();
-  });
+  const overlayEl = document.getElementById('overlay');
+  if (overlayEl) {
+    overlayEl.addEventListener('click', e => {
+      if (e.target === overlayEl) closeModal();
+    });
+  }
 });
 
-// Scroll to top button
+// Scroll to top button + scroll spy active nav
 window.addEventListener('scroll', () => {
-  document.getElementById('toTop').classList.toggle('show', scrollY > 500);
+  // Scroll to top button
+  const toTopEl = document.getElementById('toTop');
+  if (toTopEl) toTopEl.classList.toggle('show', scrollY > 500);
+
+  // Scroll spy: update nav link aktif berdasarkan section yang terlihat
+  const navBtns = document.querySelectorAll('.nav-link');
+  if (!navBtns.length) return;
+
+  const sections = [
+    { id: 'hero',     btn: navBtns[0] },
+    { id: 'projects', btn: navBtns[1] },
+    { id: 'tentang',  btn: navBtns[2] },
+  ];
+
+  let current = sections[0]; // default beranda
+  const offset = 80; // tinggi navbar + sedikit buffer
+
+  for (const s of sections) {
+    const el = document.getElementById(s.id);
+    if (!el) continue;
+    if (el.getBoundingClientRect().top <= offset) {
+      current = s;
+    }
+  }
+
+  sections.forEach(s => s.btn && s.btn.classList.remove('on'));
+  if (current.btn) current.btn.classList.add('on');
 });
 
 // Keyboard ESC close modal
@@ -304,6 +351,7 @@ function goto(sel) {
 ────────────────────────────────────────── */
 function render() {
   const grid = document.getElementById('projGrid');
+  if (!grid) return; // halaman detail tidak punya projGrid
 
   let list = [...PROJECTS];
 
