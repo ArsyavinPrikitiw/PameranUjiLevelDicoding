@@ -262,6 +262,25 @@ const PROJECTS = [
       { nama: 'Syakila Ramadani', peran: '10 PPLG 1 - Analyst & Frontend' },
     ],
   },
+
+  {
+    id       : 'CC26-PS035',
+    judul    : 'FinEdu - Revolusi Teknologi Keuangan (Fintech) untuk Generasi Muda', 
+    tema     : 'FinTech',
+    cat      : '6',
+    deskripsi: 'Web kita bernama FinEdu - Web Literasi Finansial Digital yang terdapat module pembelajaran berupa materi dan video, Dashboard, Calculator, Profile, dan Simulasi Kelola Keuangan, serta fitur login dan registrasi.'    stack    : ['HTML', 'CSS', 'JSX', 'PHP',],
+    link     : 'https://finedu-frontend.vercel.app/',
+    gambar   : 'assets/WhatsApp Image 2026-06-07 at 19.13.31.jpeg',
+    github   : '',
+    anggota  : [
+      { nama: 'Muhammad Rizky Maulana',    peran: '10 PPLG 1 - FrontEnd Dev' },
+      { nama: 'Tisya Putri Viana', peran: '10 PPLG 1 - FrontEnd & BackEnd Dev' },
+      { nama: 'Maisie Anzala Maramis', peran: '10 PPLG 3 - Design UI/UX' },
+      { nama: 'Khaira Putri Madani', peran: '10 PPLG 3 - Data Analyst' },
+      { nama: 'Niko Keandre Adinata', peran: '10 PPLG 3 - Project Leader' },
+      { nama: 'Cinta Melia Putri', peran: '10 PPLG 2 - Design UI/UX' },
+    ],
+  },
 ];
 
 /* ──────────────────────────────────────────
